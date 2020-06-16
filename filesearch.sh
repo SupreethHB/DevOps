@@ -13,10 +13,11 @@ then
 	if [ $var = 0 ]
 	then
 		echo "Branch $2 already exists"
+		exit 1
 	else
 		git checkout -b $2
 		echo"Branch $2 is created"
-		echo "New file created in $2  branch" > file02.txt
+		echo "New file created in $2  branch" > file03.txt
 		git add .
 		git commit -m "commit newly created file"
 		git push -u origin $2
