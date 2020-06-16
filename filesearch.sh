@@ -14,13 +14,12 @@ then
 	then
 		echo "Branch $2 already exists"
 	else
-		git branch $2
+		git checkout -b $2
 		echo"Branch $2 is created"
-		git checkout $2
 		echo "New file created in $2  branch" > file02.txt
 		git add .
 		git commit -m "commit newly created file"
-		git push
+		git push -u origin $2
 	fi
 else
 	echo "Please enter valid git repository, enter $1 path is incorrect"
